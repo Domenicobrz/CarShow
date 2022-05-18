@@ -19,7 +19,16 @@ const CarShow = () => {
 
       <color args={[0, 0, 0]} attach="background" />
 
-      <Car />
+      <CubeCamera resolution={256} frames={Infinity}>
+        {(texture) => {
+          <>
+            <Environment map={texture} />
+            <Car />
+          </>;
+        }}
+      </CubeCamera>
+
+      {/* <Car /> */}
 
       <spotLight
         color={[1, 0.25, 0.7]}
